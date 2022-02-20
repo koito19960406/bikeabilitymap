@@ -1,0 +1,11 @@
+name: bikeabilitymap
+title:
+username:
+account: koichi-ito
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 5694119
+bundleId: 5599093
+url: https://koichi-ito.shinyapps.io/bikeabilitymap/
+when: 1645365201.85566
+lastSyncTime: 1645365201.85567

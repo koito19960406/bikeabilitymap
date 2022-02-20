@@ -9,8 +9,15 @@ app_ui <- function(request) {
     # Leave this function for adding external resources
     golem_add_external_resources(),
     # Your application UI logic 
-    fluidPage(
-      h1("bikeabilitymap")
+    navbarPage(
+      "Bikeability Dashboard",
+      header = tagList(
+      ),
+      tabPanel("Map",
+               bootstrapPage(theme = shinythemes::shinytheme("darkly")),
+               mod_map_ui("map_ui_1"))#,
+      # tabPanel("Plot",
+      #          mod_scatter_plot_ui("scatter_plot_ui_1"))
     )
   )
 }

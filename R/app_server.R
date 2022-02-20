@@ -6,5 +6,6 @@
 #' @noRd
 app_server <- function( input, output, session ) {
   # Your application server logic 
-  
+  mod_map_server("map_ui_1")
+  # mod_scatter_plot_server("scatter_plot_ui_1")
 }

@@ -16,11 +16,26 @@
 ## Dependencies ----
 ## Add one line by package you want to add as dependency
 usethis::use_package( "thinkr" )
+usethis::use_package( "dplyr" )
+usethis::use_package( "magrittr" )
+usethis::use_package( "leaflet" )
+usethis::use_package( "shinycssloaders" )
+usethis::use_package( "shinyWidgets" )
+usethis::use_package( "shinipsum" )
+usethis::use_package( "here" )
+usethis::use_package( "viridis" )
+usethis::use_package( "stringr" )
+usethis::use_package( "ggplot2" )
+usethis::use_package( "shinythemes" )
+usethis::use_package( "spelling" )
+usethis::use_package( "hunspell" )
+usethis::use_package( "sf" )
+usethis::use_pipe()
 
 ## Add modules ----
 ## Create a module infrastructure in R/
-golem::add_module( name = "name_of_module1" ) # Name of the module
-golem::add_module( name = "name_of_module2" ) # Name of the module
+golem::add_module( name = "map" ) # Name of the module
+golem::add_module( name = "scatter_plot" ) # Name of the module
 
 ## Add helper functions ----
 ## Creates fct_* and utils_*
@@ -32,6 +47,7 @@ golem::add_utils( "helpers" )
 golem::add_js_file( "script" )
 golem::add_js_handler( "handlers" )
 golem::add_css_file( "custom" )
+addResourcePath( 'img', system.file('app/img', package = 'golex') )
 
 ## Add internal datasets ----
 ## If you have data in your package
