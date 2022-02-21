@@ -16,4 +16,6 @@ Please read [my published
 paper](https://www.researchgate.net/publication/354710278_Assessing_bikeability_with_street_view_imagery_and_computer_vision)
 to learn more about it!
 
-![dashboard](inst/app/www/screen_shot.png "screen_shot")
+You can see the dashboard
+[here](https://koichi-ito.shinyapps.io/bikeabilitymap/) and download the
+data as well! ![dashboard](inst/app/www/screen_shot.png "screen_shot")

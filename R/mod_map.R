@@ -23,9 +23,10 @@ mod_map_ui <- function(id){
         tags$p("This dashboard is an extension of the research conducted by
                Koichi Ito and Filip Biljecki, so read", 
                tags$a(href="https://www.researchgate.net/publication/354710278_Assessing_bikeability_with_street_view_imagery_and_computer_vision",
-                      "this paper on bikeability",), 
-               "to learn more!"),
-        
+                      "this paper",), 
+               "to learn more about how to assess bikeability with street view imagery!"),
+        img(src='www/pano=29H5QmJa-sFXU8XLF_Zv2g.jpg',width="100%"),
+        tags$div(style="margin-bottom:10px"),
         # select variables to show
         selectInput(ns("variable"),
                     "Select the variable to map",
