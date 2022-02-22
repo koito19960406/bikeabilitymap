@@ -70,12 +70,14 @@ mod_map_server <- function(id){
     # tokyo
     title_tokyo<-reactive({
       paste0(stringr::str_to_title(stringr::str_replace_all(input[["variable"]],"_"," "))," in Tokyo" )
-    })
+    }) %>% 
+      shiny::bindCache(input[["variable"]])
     output[["title_tokyo"]]<-renderText(title_tokyo())
     # singapore
     title_singapore<-reactive({
       paste0(stringr::str_to_title(stringr::str_replace_all(input[["variable"]],"_"," "))," in Singapore" )
-    })
+    })%>% 
+      shiny::bindCache(input[["variable"]])
     output[["title_singapore"]]<-renderText(title_singapore())
     
     
@@ -90,7 +92,8 @@ mod_map_server <- function(id){
     point_data_no_geom_tokyo <- reactive({
       point_data_tokyo %>% 
         dplyr::pull(tolower(input[["variable"]]))  # extract the variable
-    })
+    })%>% 
+      shiny::bindCache(input[["variable"]])
     
     # singapore
     point_data_singapore <- point %>% 
@@ -101,7 +104,8 @@ mod_map_server <- function(id){
     point_data_no_geom_singapore <- reactive({
       point_data_singapore %>% 
         dplyr::pull(tolower(input[["variable"]]))  # extract the variable
-    })
+    })%>% 
+      shiny::bindCache(input[["variable"]])
     
     # concatenate two point data
     point_combined<-reactive({
@@ -116,7 +120,8 @@ mod_map_server <- function(id){
              glue::glue("{round(point_data_no_geom_tokyo(),2)} <br>")
              ) %>% 
         lapply(htmltools::HTML)                                                                             
-    })
+    })%>% 
+      shiny::bindCache(input[["variable"]])
     
     # create color bin
     pal_tokyo <- reactive(leaflet::colorNumeric(palette = viridis::magma(256), domain= point_combined()))
@@ -152,7 +157,8 @@ mod_map_server <- function(id){
              glue::glue("{round(point_data_no_geom_singapore(),2)} <br>")
              ) %>% 
         lapply(htmltools::HTML)                                                                             
-    })
+    })%>% 
+      shiny::bindCache(input[["variable"]])
     
     # create color bin
     pal_singapore <- reactive(leaflet::colorNumeric(palette = viridis::magma(256), domain= point_combined()))
